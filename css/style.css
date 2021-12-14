@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@200;400;600&display=swap');
+* {
+box-sizing: border-box;
+}
+
+h1{
+font-weight: normal;
+margin-top: 150px;
+font-size: 40px;
+color: rgb(109, 118, 199);
+}
+
+.karamba{
+text-align: center;
+}
+.karamba span{
+color: rgb(109, 118, 199);
+font-size: 18px;
+}
+
+.big-Numbers{
+color: rgb(109, 118, 199);
+font-size: 46px;
+font-weight: bold;
+line-height: 1;
+margin: 0 30px;
+}
+
+body{
+display: flex;
+flex-direction: column;
+font-family: 'Gluten', cursive;
+margin: 0;
+align-items: center;
+background-image: url(https://img.desktopwallpapers.ru/newyear/pics/wide/1366x768/b6e586fe102e6c525fa5600585f98a6b.jpg);
+/* https://img4.goodfon.ru/original/1366x768/7/f2/happy-new-yaer-new-year-christmas-novyi-god-podarki-elka-der.jpg */
+min-height: 600px;
+background-size: cover;
+background-position: center center;
+}
+
+.timer-container {
+display: flex;
+}
