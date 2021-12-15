@@ -1,25 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@200;400;600&display=swap');
 * {
 box-sizing: border-box;
+
 }
 
 h1{
+z-index: 2;
+position:absolute;top:50;left:100;
 font-weight: normal;
 margin-top: 150px;
 font-size: 40px;
-color: rgb(109, 118, 199);
+color: rgb(243, 243, 243);
+text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        3px 3px 0 #000;
 }
 
-.karamba{
-text-align: center;
-}
 .karamba span{
-color: rgb(109, 118, 199);
+color: rgb(243, 243, 243);
+text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        3px 3px 0 #000;
 font-size: 18px;
 }
 
 .big-Numbers{
-color: rgb(109, 118, 199);
+    white-space: nowrap;
+    display: inline-block;
+    color: rgb(240, 120, 50);
+    text-shadow: 
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            3px 3px 0 #000;
 font-size: 46px;
 font-weight: bold;
 line-height: 1;
@@ -27,18 +44,49 @@ margin: 0 30px;
 }
 
 body{
+
 display: flex;
+flex-direction: inherit;
 flex-direction: column;
 font-family: 'Gluten', cursive;
 margin: 0;
+padding: 0;
 align-items: center;
-background-image: url(https://img.desktopwallpapers.ru/newyear/pics/wide/1366x768/b6e586fe102e6c525fa5600585f98a6b.jpg);
-/* https://img4.goodfon.ru/original/1366x768/7/f2/happy-new-yaer-new-year-christmas-novyi-god-podarki-elka-der.jpg */
 min-height: 600px;
+
 background-size: cover;
 background-position: center center;
 }
 
 .timer-container {
+margin-top: 250px;
+z-index: 2;
+position:absolute;top:0;left:100; 
 display: flex;
 }
+
+.slider-counter {
+color: rgb(243, 243, 243);
+text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        3px 3px 0 #000;
+margin-top: 50px;
+position:absolute;top:50;left:100;
+display: flex;
+font-size: 24px;
+z-index: 2;
+}
+
+span {
+padding:0 15px 0 15px;
+color: rgb(243, 243, 243);
+text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        3px 3px 0 #000;
+z-index:1;
+}
+

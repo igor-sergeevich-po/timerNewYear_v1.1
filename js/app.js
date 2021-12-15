@@ -3,7 +3,7 @@ const hotDate = "2021-12-31";
 function getTimeOut(hotDate) {
     const t = Date.parse(hotDate) - Date.parse(new Date());
         daysLeft = Math.floor(t / (1000 * 60 * 60 * 24)),
-        hoursLeft = Math.floor((t / (1000 * 60 * 60) % 24)-3),
+        hoursLeft = Math.floor(((t / (1000 * 60 * 60)) % 24)-3),
         minutesLef = Math.floor(t / (1000 * 60) % 60),
         secondsLeft = Math.floor((t / 1000)%60);
     return {
@@ -16,8 +16,6 @@ function getTimeOut(hotDate) {
 }
 
 let ggg = getTimeOut(hotDate);
-console.log(ggg);
-
 
 function setTimer(selector, hotDate) {
     const timer = document.querySelector(selector),
@@ -28,11 +26,8 @@ function setTimer(selector, hotDate) {
             timeInterval = setInterval(updateTimer, 1000);
     updateTimer();
 
-
     function updateTimer() {
         const t = getTimeOut(hotDate);
-
-        console.log(t);
 
         daysLeft.innerHTML = t.daysLeft;
         hours.innerHTML = t.hoursLeft;
@@ -47,25 +42,43 @@ function setTimer(selector, hotDate) {
 }
 setTimer('.timer-container', hotDate);
 
+///slider
 
+const slides = document.querySelectorAll('.slide');
+const prevButton = document.querySelector('.button-prev');
+const nextButton = document.querySelector('.button-next');
+let slideIndex = 1;
 
+let currentSlide = document.querySelector('#current');
 
-let myImage = new Image;
+function showSlides(n) {
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
 
-myImage.src = "https://img.desktopwallpapers.ru/newyear/pics/wide/1366x768/b6e586fe102e6c525fa5600585f98a6b.jpg";
+    slides.forEach((slide) => slide.style.display = 'none');
 
- 
+    slides[slideIndex - 1].style.display = 'block';
 
-myImage.onload = function(){imageLoaded = true};
+    currentSlide.innerHTML = slideIndex;
+}
 
- 
+function plusSlide(n) {
+    showSlides(slideIndex += n);  
+}
 
-setTimeout(function(){
-  var imgDiv = document.getElementById("img");
+prevButton.addEventListener('click', () => {
+    plusSlide(-1);
+    console.log('click -');
+});
 
-  if(window.imageLoaded) 
-  return imgDiv.style.backgroundImage = "url(" + myImage.src + ")";
+nextButton.addEventListener('click', () => {
+    plusSlide(1);
+    console.log('click +');
+});
 
-  imgDiv.style.backgroundImage = "url(" + "enotherCoolImageUrl" + ")";
+showSlides(slideIndex);
 
-}, 1000);
