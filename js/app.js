@@ -1,9 +1,9 @@
-const hotDate = "2021-12-31";
+const hotDate = "December 31 2021 00:00:00 GMT+0300";
 
 function getTimeOut(hotDate) {
     const t = Date.parse(hotDate) - Date.parse(new Date());
         daysLeft = Math.floor(t / (1000 * 60 * 60 * 24)),
-        hoursLeft = Math.floor((t / (1000 * 60 * 60)) % 23),
+        hoursLeft = Math.floor((t / (1000 * 60 * 60)) % 24),
         minutesLef = Math.floor((t / (1000 * 60)) % 60),
         secondsLeft = Math.floor((t / 1000)%60);
     return {
