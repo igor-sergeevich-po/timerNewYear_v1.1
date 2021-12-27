@@ -1,4 +1,4 @@
-const hotDate = "December 31 2021 00:00:00 GMT+0300";
+const hotDate = "Januar 1 2022 00:00:00 GMT+0300";
 
 function getTimeOut(hotDate) {
     const t = Date.parse(hotDate) - Date.parse(new Date());
