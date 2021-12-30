@@ -1,4 +1,4 @@
-const hotDate = "Januar 1 2022 00:00:00 GMT+0300";
+let hotDate = "Januar 1 2022 00:00:00 GMT+0300";
 
 function getTimeOut(hotDate) {
     const t = Date.parse(hotDate) - Date.parse(new Date());
@@ -36,6 +36,10 @@ function setTimer(selector, hotDate) {
 
         if ( t.total <=0) {
             clearInterval(timeInterval);
+            mainHeader.innerHTML = `С Новым Годом!!!<br>
+            дней безудержного<br> веселья осталось:`;
+            hotDate = 'Januar 9 2022 00:00:00 GMT+0300';
+            setTimer('.timer-container', hotDate)
         }
 };
 
